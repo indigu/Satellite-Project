@@ -3,16 +3,21 @@ World Earth;
 void setup()
 {
   size(1000, 600);
-  background(0);
+  background(244);
   noStroke();
   frameRate(60);
   smooth();
   
-  Earth = new World(width/2,height/2);
+  Earth = new World(100,0);
 }
 
 void draw()
 {
-  starBackground();
-  Earth.run();
+  if (mousePressed)
+  { 
+    starBackground();
+    loop();
+    fill(0,100,255);
+    Earth.run();
+  }
 }

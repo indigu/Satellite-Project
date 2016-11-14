@@ -2,18 +2,15 @@
 //t = temp
 class World
 {
-  float xpos; 
-  float ypos;
-  float oRad;
-  float oSize;
-  float theta;
-  color colour;
+  float radius;
+  float distance;
+  float angle;
 
 
-  World(float a, float b)
+  World(float rad, float dis)
   {
-    xpos = a;
-    ypos = b;
+    radius = rad;
+    distance = dis;
   }
 
   void run()
@@ -21,21 +18,22 @@ class World
     display();
   }
 
-
   void display()
   {
-    fill(0,100,255);
-    ellipse(xpos, ypos, 100, 100);
+    translate(width/2, height/2);
+    ellipse(0,0, radius, radius);
   }
 
 }
 
+
+
 void starBackground()
 {
-  float ellipseSize = random(20);
+  float ellipseSize = random(0,10);
   fill(0,10);
   rect(0, 0, width, height);
   
-  fill(200, 200, 200);
+  fill(200, 90);
   ellipse(random(width), random(height), ellipseSize, ellipseSize);
 }
