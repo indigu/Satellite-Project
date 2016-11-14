@@ -10,18 +10,27 @@ class World
   color colour;
 
 
-World(color c, float tRad, float tSize)
-{
-  colour = c;
-  oRad = tRad;
-  oSize = tSize;
+  World(float a, float b)
+  {
+    xpos = a;
+    ypos = b;
+  }
+
+  void run()
+  {
+    display();
+  }
+
+
+  void display()
+  {
+    fill(0,100,255);
+    ellipse(xpos, ypos, 100, 100);
+  }
+
 }
 
-
-
-}
-
-void background()
+void starBackground()
 {
   float ellipseSize = random(20);
   fill(0,10);

@@ -1,3 +1,5 @@
+World Earth;
+
 void setup()
 {
   size(1000, 600);
@@ -5,9 +7,12 @@ void setup()
   noStroke();
   frameRate(60);
   smooth();
+  
+  Earth = new World(width/2,height/2);
 }
 
 void draw()
 {
-  background();
+  starBackground();
+  Earth.run();
 }
