@@ -1,13 +1,13 @@
 World Earth;
 PFont font;
 int counter = 0;
-
+int timer = 0;
 void setup()
 {
   size(1000, 600);
   background(244);
   noStroke();
-  frameRate(60);
+  frameRate(50);
   smooth();
   
   font = loadFont("KristenITC-Regular-45.vlw");
@@ -20,20 +20,27 @@ void draw()
 {
   if(counter == 0)
   {
-    word();
     rectBackground();
+    timer++;
+    if(timer > 50)
+    {
+      word();
+    }
   }
-  
-  if(counter > 0)
+  else
   {
     starBackground();
-    loop();
-    fill(0,100,255);
-    Earth.run();
+    timer++;
+    if(timer > 50)
+    {
+      fill(0, 0, 200);
+      Earth.run();
+    }
   }
     
   if(mousePressed)
   {
    counter++;
+   timer = 0;
   }
 }

@@ -26,8 +26,6 @@ class World
 
 }
 
-
-
 void starBackground()
 {
   float ellipseSize = random(0,10);
@@ -53,7 +51,7 @@ void word()
 {
     fill(255, 255, 0);
      
-    text("Satellites Information", width/4 + 10, height/6);
-    text("Click anywhere to continue", width/5, height/2);
+    text("Satellites Information Center", width/6 + 10, height/6);
+    text("Click anywhere to continue", width/5, height/1.1);
     smooth();
 }
