@@ -1,8 +1,13 @@
 World[] Planets = new World[2];
 Star[] stars = new Star[500];
+
+PImage EarthTexture;
+PImage MoonTexture;
 PFont font;
+
 int counter = 0;
 int timer = 0;
+
 void setup()
 {
   size(1000,600, P3D);
@@ -13,6 +18,9 @@ void setup()
   
   font = loadFont("KristenITC-Regular-45.vlw");
   textFont(font);
+  
+  EarthTexture = loadImage("earth.jpg");
+  MoonTexture = loadImage("moon.jpg");
   
   Planets[0] = new World(150,0);
   Planets[1] = new World(60, 160);

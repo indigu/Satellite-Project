@@ -1,5 +1,3 @@
-//o = original
-//t = temp
 class World
 {
   float radius;
@@ -7,12 +5,24 @@ class World
   float angle;
   float speed;
 
+  PShape earth;
+  PShape moon;
+
   World(float rad, float dis)
   {
     radius = rad;
     distance = dis;
     angle = random(TWO_PI);
     speed = random(0.01, 0.05);
+    
+    noStroke();
+    noFill();
+    earth = createShape(SPHERE, radius/2);
+    earth.setTexture(EarthTexture);
+    
+    moon = createShape(SPHERE, radius/2);
+    moon.setTexture(MoonTexture);
+    
   }
 
   void run()
@@ -27,7 +37,16 @@ class World
     translate(distance, 0);
     rotate(angle);
     rotation();
-    sphere(radius/2);
+    shape(earth);
+  }
+  
+  void moon()
+  {    
+    lights();
+    translate(distance, 0);
+    rotate(angle);
+    rotation();
+    shape(moon);
   }
   
   void center()
