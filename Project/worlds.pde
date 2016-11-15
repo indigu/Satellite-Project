@@ -23,10 +23,11 @@ class World
 
   void display()
   {    
+    lights();
     translate(distance, 0);
     rotate(angle);
     rotation();
-    ellipse(0,0, radius, radius);
+    sphere(radius/2);
   }
   
   void center()

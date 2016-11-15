@@ -16,4 +16,11 @@ class Star
     ellipse(x, y, 4, 4);
   }
   
+  void StarYellowRun()
+  {
+    fill(255, 255, 0);
+    noStroke();
+    ellipse(x, y, 3, 3);
+  }
+  
 }

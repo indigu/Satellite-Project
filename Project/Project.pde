@@ -1,11 +1,11 @@
 World[] Planets = new World[2];
-Star[] stars = new Star[300];
+Star[] stars = new Star[500];
 PFont font;
 int counter = 0;
 int timer = 0;
 void setup()
 {
-  size(1000,600);
+  size(1000,600, P3D);
   background(244);
   noStroke();
   frameRate(60);
@@ -17,7 +17,7 @@ void setup()
   Planets[0] = new World(150,0);
   Planets[1] = new World(60, 160);
   
-  for(int i = 0; i < 300; i++)
+  for(int i = 0; i < 500; i++)
   {
     stars[i] = new Star();
   }
@@ -36,19 +36,21 @@ void draw()
   }
   else
   {
+    int i;
     background(0);
     if((timer % 2) == 0)
     {
-      for(int i = 0; i < 150; i++)
+      for(i = 0; i < 100; i++)
       {
         fill(255,0,255);
-        stars[i].StarRun();
+        stars[i].StarYellowRun();
       }
     }
-    for(int i = 150; i < 300; i++)
-      {
-        stars[i].StarRun();
-      }
+    for(i = 100; i < 500; i++)
+    {
+      stars[i].StarRun();
+    }
+
     timer++;
     if(timer > 50)
     {
