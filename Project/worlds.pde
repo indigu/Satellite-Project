@@ -20,7 +20,9 @@ class World
   }
 
   void display()
-  {
+  {    
+    translate(distance, 0);
+    rotate(angle);
     ellipse(0,0, radius, radius);
   }
   
