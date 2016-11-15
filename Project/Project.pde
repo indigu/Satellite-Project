@@ -13,8 +13,8 @@ void setup()
   font = loadFont("KristenITC-Regular-45.vlw");
   textFont(font);
   
-  Planets[0] = new World(100,0);
-  Planets[1] = new World(80, 60);
+  Planets[0] = new World(150,0);
+  Planets[1] = new World(60, 100);
 }
 
 void draw()

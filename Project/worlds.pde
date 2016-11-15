@@ -11,6 +11,7 @@ class World
   {
     radius = rad;
     distance = dis;
+    angle = random(TWO_PI);
   }
 
   void run()
