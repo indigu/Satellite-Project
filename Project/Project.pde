@@ -8,7 +8,7 @@ void setup()
   size(1000,600);
   background(244);
   noStroke();
-  frameRate(50);
+  frameRate(60);
   smooth();
   
   font = loadFont("KristenITC-Regular-45.vlw");
@@ -37,10 +37,18 @@ void draw()
   else
   {
     background(0);
-    for(int i = 0; i < 300; i++)
+    if((timer % 2) == 0)
     {
-      stars[i].StarRun();
+      for(int i = 0; i < 150; i++)
+      {
+        fill(255,0,255);
+        stars[i].StarRun();
+      }
     }
+    for(int i = 150; i < 300; i++)
+      {
+        stars[i].StarRun();
+      }
     timer++;
     if(timer > 50)
     {

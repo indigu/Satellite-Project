@@ -16,6 +16,4 @@ class Star
     ellipse(x, y, 4, 4);
   }
   
-  
-  
 }

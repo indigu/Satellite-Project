@@ -12,7 +12,7 @@ class World
     radius = rad;
     distance = dis;
     angle = random(TWO_PI);
-    speed = random(0.01, 0.1);
+    speed = random(0.01, 0.05);
   }
 
   void run()
