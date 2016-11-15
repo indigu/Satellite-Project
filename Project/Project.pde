@@ -65,7 +65,7 @@ void draw()
       fill(0, 0, 200);
       Planets[0].run();
       fill(155);
-      Planets[1].display();   
+      Planets[1].moon();   
       
     }
   }
