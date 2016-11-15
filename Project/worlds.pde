@@ -12,7 +12,7 @@ class World
     radius = rad;
     distance = dis;
     angle = random(TWO_PI);
-    speed = random(0.01, 0.2);
+    speed = random(0.01, 0.1);
   }
 
   void run()
@@ -25,6 +25,7 @@ class World
   {    
     translate(distance, 0);
     rotate(angle);
+    rotation();
     ellipse(0,0, radius, radius);
   }
   
@@ -39,6 +40,7 @@ class World
   }
 }
 
+/* Much less fancy way of drawing the background
 void starBackground()
 {
   float ellipseSize = random(0,10);
@@ -48,7 +50,7 @@ void starBackground()
   fill(200, 90);
   ellipse(random(width), random(height), ellipseSize, ellipseSize);
 }
-
+*/
 
 void rectBackground()
 {

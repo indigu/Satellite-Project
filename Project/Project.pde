@@ -1,4 +1,5 @@
 World[] Planets = new World[2];
+Star[] stars = new Star[300];
 PFont font;
 int counter = 0;
 int timer = 0;
@@ -14,7 +15,12 @@ void setup()
   textFont(font);
   
   Planets[0] = new World(150,0);
-  Planets[1] = new World(60, 100);
+  Planets[1] = new World(60, 160);
+  
+  for(int i = 0; i < 300; i++)
+  {
+    stars[i] = new Star();
+  }
 }
 
 void draw()
@@ -30,7 +36,11 @@ void draw()
   }
   else
   {
-    starBackground();
+    background(0);
+    for(int i = 0; i < 300; i++)
+    {
+      stars[i].StarRun();
+    }
     timer++;
     if(timer > 50)
     {
@@ -38,9 +48,10 @@ void draw()
       Planets[0].run();
       fill(155);
       Planets[1].display();   
+      
     }
   }
-    
+  
   if(mousePressed)
   {
    counter++;
