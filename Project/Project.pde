@@ -1,10 +1,10 @@
-World Earth;
+World[] Planets = new World[2];
 PFont font;
 int counter = 0;
 int timer = 0;
 void setup()
 {
-  size(1000, 600);
+  size(1000,600);
   background(244);
   noStroke();
   frameRate(50);
@@ -13,7 +13,8 @@ void setup()
   font = loadFont("KristenITC-Regular-45.vlw");
   textFont(font);
   
-  Earth = new World(100,0);
+  Planets[0] = new World(100,0);
+  Planets[1] = new World(80, 60);
 }
 
 void draw()
@@ -34,7 +35,9 @@ void draw()
     if(timer > 50)
     {
       fill(0, 0, 200);
-      Earth.run();
+      Planets[0].run();
+      fill(155);
+      Planets[1].display();   
     }
   }
     

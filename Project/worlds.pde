@@ -5,7 +5,7 @@ class World
   float radius;
   float distance;
   float angle;
-
+  
 
   World(float rad, float dis)
   {
@@ -15,15 +15,20 @@ class World
 
   void run()
   {
+    center();
     display();
   }
 
   void display()
   {
-    translate(width/2, height/2);
     ellipse(0,0, radius, radius);
   }
-
+  
+  void center()
+  {
+   translate(width/2, height/2); 
+  }    
+  
 }
 
 void starBackground()
