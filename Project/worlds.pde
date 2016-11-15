@@ -5,13 +5,14 @@ class World
   float radius;
   float distance;
   float angle;
-  
+  float speed;
 
   World(float rad, float dis)
   {
     radius = rad;
     distance = dis;
     angle = random(TWO_PI);
+    speed = random(0.01, 0.2);
   }
 
   void run()
@@ -32,6 +33,10 @@ class World
    translate(width/2, height/2); 
   }    
   
+  void rotation()
+  {
+    angle = angle + speed;
+  }
 }
 
 void starBackground()
