@@ -1,4 +1,4 @@
-World[] Planets = new World[2];
+World[] Planets = new World[4];
 Star[] stars = new Star[500];
 
 PImage EarthTexture;
@@ -66,17 +66,7 @@ void draw()
       Planets[0].run();
       fill(155);
       Planets[1].moon();   
-      
     }
   }
   
-}
-
-void keyPressed()
-{
-  if( counter == 0)
-  {
-    counter++;
-    timer = 0;
-  }
 }
