@@ -22,8 +22,8 @@ void setup()
   EarthTexture = loadImage("earth.jpg");
   MoonTexture = loadImage("moon.jpg");
   
-  Planets[0] = new World(150,0);
-  Planets[1] = new World(60, 160);
+  Planets[0] = new World(180,0);
+  Planets[1] = new World(40, 200);
   
   for(int i = 0; i < 500; i++)
   {
@@ -70,9 +70,13 @@ void draw()
     }
   }
   
-  if(mousePressed)
+}
+
+void keyPressed()
+{
+  if( counter == 0)
   {
-   counter++;
-   timer = 0;
+    counter++;
+    timer = 0;
   }
 }

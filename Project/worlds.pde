@@ -13,7 +13,7 @@ class World
     radius = rad;
     distance = dis;
     angle = random(TWO_PI);
-    speed = random(0.01, 0.05);
+    speed = 0.01;
     
     noStroke();
     noFill();
@@ -87,6 +87,6 @@ void word()
     fill(255, 255, 0);
      
     text("Satellites Information Center", width/6 + 10, height/6);
-    text("Click anywhere to continue", width/5, height/1.1);
+    text("Press anything to continue", width/4.5, height/1.1);
     smooth();
 }
