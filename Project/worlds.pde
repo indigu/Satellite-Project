@@ -5,7 +5,8 @@ class World
   float angle;
   float satAngle;
   float speed;
-
+  
+  PVector vec;
   PShape earth;
   PShape moon;
   
@@ -16,6 +17,8 @@ class World
     angle = random(TWO_PI);
     satAngle = random(TWO_PI);
     speed = 0.01;
+    vec = PVector.random3D();
+    vec.mult(distance);
     
     noStroke();
     noFill();
@@ -35,7 +38,7 @@ class World
   { 
     pushMatrix();
     rotate(angle);
-    translate(distance, 0);
+    translate(vec.x, vec.y, vec.z);
     rotation();
     shape(earth);
     popMatrix();
@@ -46,7 +49,7 @@ class World
     pushMatrix();
     lights();
     rotate(angle);
-    translate(distance, 0);
+    translate(vec.x, vec.y, vec.z);
     rotation();
     shape(moon);
     popMatrix();
@@ -57,7 +60,7 @@ class World
     pushMatrix();
     rotate(angle);
     rotate(satAngle);
-    translate(distance, 0);
+    translate(vec.x, vec.y, vec.z);
     rotation();
     shape(earth);
     popMatrix();
