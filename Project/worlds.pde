@@ -9,7 +9,8 @@ class World
   PVector vec;
   PShape earth;
   PShape moon;
-  sa
+  PShape sat;
+
   World(float rad, float dis)
   {
     radius = rad;
@@ -27,6 +28,9 @@ class World
     
     moon = createShape(SPHERE, radius/2);
     moon.setTexture(MoonTexture);  
+    
+    sat = createShape(SPHERE, radius/2);
+    sat.setTexture(SatTexture);
   }
   
   void run()
@@ -38,7 +42,7 @@ class World
   { 
     pushMatrix();
     rotate(angle);
-    translate(vec.x, vec.y, vec.z);
+    translate(distance, 0);
     rotation();
     shape(earth);
     popMatrix();
@@ -67,7 +71,7 @@ class World
     rotate(satAngle);
     translate(vec.x, vec.y, vec.z);
     rotation();
-    shape(earth);
+    shape(sat);
     popMatrix();
   }
   
