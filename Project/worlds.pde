@@ -9,7 +9,7 @@ class World
   PVector vec;
   PShape earth;
   PShape moon;
-  
+  sa
   World(float rad, float dis)
   {
     radius = rad;
@@ -48,7 +48,9 @@ class World
   { 
     pushMatrix();
     lights();
-    rotate(angle);
+    PVector v2 = new PVector(1, 0, 1);
+    PVector perp = vec.cross(v2);
+    rotate(angle, perp.x, perp.y, perp.z);
     translate(vec.x, vec.y, vec.z);
     rotation();
     shape(moon);
@@ -58,6 +60,9 @@ class World
   void satOne()
   {
     pushMatrix();
+    PVector v2 = new PVector(1, 0, 1);
+    PVector perp = vec.cross(v2);
+    rotate(angle, perp.x, perp.y, perp.z);
     rotate(angle);
     rotate(satAngle);
     translate(vec.x, vec.y, vec.z);
