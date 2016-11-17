@@ -1,5 +1,6 @@
-World[] Planets = new World[4];
+World[] Planets = new World[3];
 Star[] stars = new Star[500];
+World satOne;
 
 PImage EarthTexture;
 PImage MoonTexture;
@@ -24,6 +25,8 @@ void setup()
   
   Planets[0] = new World(180,0);
   Planets[1] = new World(40, 200);
+  
+  satOne = new World(20, 150);
   
   for(int i = 0; i < 500; i++)
   {
@@ -62,10 +65,10 @@ void draw()
     timer++;
     if(timer > 50)
     {
-      fill(0, 0, 200);
+      translate(width/2, height/2);
       Planets[0].run();
-      fill(155);
-      Planets[1].moon();   
+      Planets[1].moon();  
+      satOne.satOne();
     }
   }
   

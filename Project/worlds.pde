@@ -3,16 +3,18 @@ class World
   float radius;
   float distance;
   float angle;
+  float satAngle;
   float speed;
 
   PShape earth;
   PShape moon;
-
+  
   World(float rad, float dis)
   {
     radius = rad;
     distance = dis;
     angle = random(TWO_PI);
+    satAngle = random(TWO_PI);
     speed = 0.01;
     
     noStroke();
@@ -23,29 +25,42 @@ class World
     moon = createShape(SPHERE, radius/2);
     moon.setTexture(MoonTexture);  
   }
-
+  
   void run()
   {
     display();
   }
 
   void display()
-  {    
-    lights();
-    translate(width/2, height/2); 
-    translate(distance, 0);
+  { 
+    pushMatrix();
     rotate(angle);
+    translate(distance, 0);
     rotation();
     shape(earth);
+    popMatrix();
   }
   
   void moon()
-  {    
+  { 
+    pushMatrix();
     lights();
-    translate(distance, 0);
     rotate(angle);
+    translate(distance, 0);
     rotation();
     shape(moon);
+    popMatrix();
+  }
+  
+  void satOne()
+  {
+    pushMatrix();
+    rotate(angle);
+    rotate(satAngle);
+    translate(distance, 0);
+    rotation();
+    shape(earth);
+    popMatrix();
   }
   
   void rotation()
