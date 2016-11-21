@@ -11,6 +11,7 @@ class World
   PShape moon;
   PShape sat1;
   PShape sat2;
+  PShape sat3;
 
   World(float rad, float dis)
   {
@@ -36,6 +37,8 @@ class World
     sat2 = createShape(SPHERE, radius/2);
     sat2.setTexture(SatTexture2);
     
+    sat3 = createShape(SPHERE, radius/2);
+    sat3.setTexture(SatTexture3);
 
     
   }
@@ -84,7 +87,7 @@ class World
   void satTwo()
   {
     pushMatrix();
-    PVector v3 = new PVector(2, 1, 6);
+    PVector v3 = new PVector(2, 1, 5);
     PVector perp = vec.cross(v3);
     rotate(angle, perp.x, perp.y, perp.z);
     rotate(satAngle);
@@ -93,6 +96,18 @@ class World
     shape(sat2);
     popMatrix();
   }
+  void satThree()
+  {
+    pushMatrix();
+    PVector v4 = new PVector(3, 0, 1);
+    PVector perp = vec.cross(v4);
+    rotate(angle, perp.x, perp.y, perp.z);
+    rotate(satAngle);
+    translate(vec.x, vec.y, vec.z);
+    rotation();
+    shape(sat3);
+    popMatrix();
+  } 
   
   void rotation()
   {
