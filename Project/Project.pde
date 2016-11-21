@@ -7,7 +7,8 @@ World satTwo;
 
 PImage EarthTexture;
 PImage MoonTexture;
-PImage SatTexture;
+PImage SatTexture1;
+PImage SatTexture2;
 PFont font;
 
 int counter = 0;
@@ -26,7 +27,8 @@ void setup()
   
   EarthTexture = loadImage("earth.jpg");
   MoonTexture = loadImage("moon.jpg");
-  SatTexture = loadImage("satellite1.jpg");
+  SatTexture1 = loadImage("satellite1.jpg");
+  SatTexture2 = loadImage("satellite2.jpg");
   
   Planets[0] = new World(200,0);
   Planets[1] = new World(55, 280);
