@@ -1,6 +1,9 @@
 World[] Planets = new World[3];
 Star[] stars = new Star[500];
 World satOne;
+World satTwo;
+//World satThree;
+//World satFour;
 
 PImage EarthTexture;
 PImage MoonTexture;
@@ -25,10 +28,13 @@ void setup()
   MoonTexture = loadImage("moon.jpg");
   SatTexture = loadImage("satellite1.jpg");
   
-  Planets[0] = new World(180,0);
-  Planets[1] = new World(40, 200);
+  Planets[0] = new World(200,0);
+  Planets[1] = new World(55, 280);
   
-  satOne = new World(20, 150);
+  satOne = new World(20, 200);
+  satTwo = new World(20, 180);
+  //satThree = new World(20, 200);
+  //satFour = new World(20, 100);
   
   for(int i = 0; i < 500; i++)
   {
@@ -71,6 +77,9 @@ void draw()
       Planets[0].run();
       Planets[1].moon();  
       satOne.satOne();
+      satTwo.satTwo();
+      //satThree.satThree();
+      //satFour.satFour();
     }
   }
   

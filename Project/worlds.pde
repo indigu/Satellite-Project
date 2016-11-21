@@ -74,6 +74,18 @@ class World
     shape(sat);
     popMatrix();
   }
+  void satTwo()
+  {
+    pushMatrix();
+    PVector v3 = new PVector(2, 1, 0);
+    PVector perp = vec.cross(v3);
+    rotate(angle, perp.x, perp.y, perp.z);
+    rotate(satAngle);
+    translate(vec.x, vec.y, vec.z);
+    rotation();
+    shape(sat);
+    popMatrix();
+  }
   
   void rotation()
   {
