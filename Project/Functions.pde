@@ -59,4 +59,7 @@ void runWorlds()
     }  
 }
       
-      
+void mousePressed()
+{
+  redraw();
+}

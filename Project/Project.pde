@@ -47,6 +47,7 @@ void setup()
 
 void draw()
 {
+  loop();
   if(counter == 0)
   {
     rectBackground();
@@ -77,11 +78,11 @@ void draw()
     runWorlds();
     timer++;
    
-    if((mousePressed == true) && (timer > 300))
+    if((keyPressed == true) && (timer > 300))
     {
       lock++;
     }
-    if(lock > 1)
+    if(lock == 2)
     {
       noLoop();
     }
