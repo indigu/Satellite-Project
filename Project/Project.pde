@@ -3,7 +3,6 @@ Star[] stars = new Star[500];
 World satOne;
 World satTwo;
 World satThree;
-//World satFour;
 
 PImage EarthTexture;
 PImage MoonTexture;
@@ -74,16 +73,25 @@ void draw()
     }
 
     timer++;
+    
     if(timer > 50)
     {
       translate(width/2, height/2);
       Planets[0].run();
-      Planets[1].moon();  
+      Planets[1].moon();
+    }
+    if(timer > 120)
+    {
       satOne.satOne();
+    }
+    if(timer > 190)
+    {
       satTwo.satTwo();
+    }
+    if(timer > 300);
+    {
       satThree.satThree();
-      //satFour.satFour();
     }
   }
-  
 }
+  
