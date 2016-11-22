@@ -72,26 +72,18 @@ void draw()
     {
       stars[i].StarRun();
     }
-
-    timer++;
     
-    if(timer > 50)
+    translate(width/2, height/2);
+    runWorlds();
+    timer++;
+   
+    if((mousePressed == true) && (timer > 300))
     {
-      translate(width/2, height/2);
-      Planets[0].run();
-      Planets[1].moon();
+      lock++;
     }
-    if(timer > 120)
+    if(lock > 1)
     {
-      satOne.satOne();
-    }
-    if(timer > 190)
-    {
-      satTwo.satTwo();
-    }
-    if(timer > 300);
-    {
-      satThree.satThree();
+      noLoop();
     }
   }
 }

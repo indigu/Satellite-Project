@@ -38,10 +38,25 @@ void keyPressed()
   }
 }
 
-void mousePressed()
+void runWorlds()
 {
-  if( timer > 300 )
-  {
-    lock++;
-  }
+  if(timer > 50)
+    {
+      Planets[0].run();
+      Planets[1].moon();
+    }
+    if(timer > 160)
+    {
+      satOne.satOne();
+    }
+    if(timer > 190)
+    {
+      satTwo.satTwo();
+    }
+    if(timer > 250);
+    {
+      satThree.satThree();
+    }  
 }
+      
+      
