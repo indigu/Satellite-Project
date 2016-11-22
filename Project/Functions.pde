@@ -37,3 +37,11 @@ void keyPressed()
     timer = 0;
   }
 }
+
+void mousePressed()
+{
+  if( timer > 300 )
+  {
+    lock++;
+  }
+}

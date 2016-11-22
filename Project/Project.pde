@@ -10,6 +10,7 @@ PImage SatTexture1, SatTexture3;
 PImage SatTexture2;
 PFont font;
 
+int lock = 1;
 int counter = 0;
 int timer = 0;
 
@@ -91,6 +92,14 @@ void draw()
     if(timer > 300);
     {
       satThree.satThree();
+    }
+    if( (lock % 2) == 1)
+    {
+      noLoop();
+    }
+    else
+    {
+      loop();
     }
   }
 }
