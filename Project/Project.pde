@@ -25,11 +25,11 @@ void setup()
   font = loadFont("KristenITC-Regular-45.vlw");
   textFont(font);
   
-  EarthTexture = loadImage("earth.jpg");
-  MoonTexture = loadImage("moon.jpg");
-  SatTexture1 = loadImage("satellite1.jpg");
-  SatTexture2 = loadImage("satellite2.jpg");
-  SatTexture3 = loadImage("satellite3.jpg");
+  EarthTexture = requestImage("earth.jpg");
+  MoonTexture = requestImage("moon.jpg");
+  SatTexture1 = requestImage("satellite1.jpg");
+  SatTexture2 = requestImage("satellite2.jpg");
+  SatTexture3 = requestImage("satellite3.jpg");
   
   Planets[0] = new World(210,0);
   Planets[1] = new World(60, 280);
@@ -92,14 +92,6 @@ void draw()
     if(timer > 300);
     {
       satThree.satThree();
-    }
-    if( (lock % 2) == 1)
-    {
-      noLoop();
-    }
-    else
-    {
-      loop();
     }
   }
 }
