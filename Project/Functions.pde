@@ -12,13 +12,14 @@ void starBackground()
 
 void rectBackground()
 {
-  float rectSize = random(0,10);
+  float rectSize = random(1,11);
   fill(0,10);
   rect(0, 0, width, height);
   
   fill(random(0,255), random(0,255), random(0,255));
   rect(random(width), random(height), rectSize, rectSize);
 }
+//Fancy background for the intro
 
 void word()
 {
@@ -28,6 +29,7 @@ void word()
     text("Press anything to continue", width/4.5, height/1.1);
     smooth();
 }
+//Intro words
 
 void keyPressed()
 {
@@ -37,6 +39,7 @@ void keyPressed()
     timer = 0;
   }
 }
+//Allows the program to progress
 
 void runWorlds()
 {
@@ -58,8 +61,10 @@ void runWorlds()
       satThree.satThree();
     }  
 }
-      
-void mousePressed()
+//Function that shows objects at different times due to timer variable
+     
+void mouseDragged()
 {
   redraw();
 }
+//Allows user to progress the program pixel by pixel when program is locked
