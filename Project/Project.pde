@@ -20,7 +20,8 @@ PFont font;
 
 
 boolean lock = false;
-int counter = 0;
+boolean counter = false;
+boolean mode = false;
 int timer = 0;
 int i;
 //global variables
@@ -65,7 +66,7 @@ void setup()
 void draw()
 {
   loop();
-  if(counter == 0)
+  if(counter == false)
   {
     rectBackground();
     timer++;
@@ -75,7 +76,7 @@ void draw()
     }
   }
   //This is the start of the program, introduction screen
-  else
+  else if(counter == true && mode == false)
   {
     background(0);
     //Resets the background
@@ -112,7 +113,15 @@ void draw()
       }
     //If user enters another key, the program will lock, and it will be
     //at a stand still
+      if((key == 'a') && (lock == true))
+      {
+        mode = true;
+      }
     }
+  }
+  else
+  {
+    background(0);
   }
 }
   

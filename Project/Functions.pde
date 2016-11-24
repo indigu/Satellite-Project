@@ -33,9 +33,9 @@ void word()
 
 void keyPressed()
 {
-  if( key == ' ' && counter == 0)
+  if( key == ' ' && counter == false)
   {
-    counter++;
+    counter = true;
     timer = 0;
   }
 }
