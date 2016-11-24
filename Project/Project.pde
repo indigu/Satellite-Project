@@ -18,7 +18,8 @@ PImage SatTexture3;
 PFont font;
 //Just loading Images and font that can be found within my program
 
-int lock = 1;
+
+boolean lock = false;
 int counter = 0;
 int timer = 0;
 int i;
@@ -101,17 +102,17 @@ void draw()
     //The timer is for certain things to happen as the timer ticks,
     //For example satellites spawn at a different time and is dictated by
     //This timer
-   
-    if((keyPressed == true) && (timer > 300))
+    
+    if(keyPressed)
     {
-      lock++;
-    }
-    if(lock == 2)
-    {
-      noLoop();
-    }
+      if((key == ' ') && (timer > 300))
+      {
+        noLoop();
+        lock = true;
+      }
     //If user enters another key, the program will lock, and it will be
     //at a stand still
+    }
   }
 }
   

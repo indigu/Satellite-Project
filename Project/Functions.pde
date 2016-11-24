@@ -26,14 +26,14 @@ void word()
     fill(255, 255, 0);
      
     text("Satellites Information Center", width/6 + 10, height/6);
-    text("Press anything to continue", width/4.5, height/1.1);
+    text("Press spacebar to begin", width/4.5, height/1.1);
     smooth();
 }
 //Intro words
 
 void keyPressed()
 {
-  if( counter == 0)
+  if( key == ' ' && counter == 0)
   {
     counter++;
     timer = 0;
@@ -63,8 +63,11 @@ void runWorlds()
 }
 //Function that shows objects at different times due to timer variable
      
-void mouseDragged()
+void mouseClicked()
 {
-  redraw();
+  if(lock == true)
+  {
+    loop();
+  }
 }
-//Allows user to progress the program pixel by pixel when program is locked
+//resumes animation
