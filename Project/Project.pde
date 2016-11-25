@@ -128,7 +128,7 @@ void draw()
       }
     //If user enters another key, the program will lock, and it will be
     //at a stand still
-      if((key == 'a') && (timer > 300))
+      if((keyCode == ENTER) && (timer > 300))
       {
         mode = true;
       }

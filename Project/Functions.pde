@@ -82,11 +82,11 @@ void mouseClicked()
 
 void satInfoBackground()
 {
-  stroke(0, 255, 100);
+  stroke(255, 99, 71);
   strokeWeight(6);
   fill(0);
   rect(20, 20, width - 40, height - 40, 20);
-  stroke(0, 250, 150);
+  stroke(200, 120, 100);
   strokeWeight(2);
   fill(0);
   rect(30, 30, width - 60, height - 60, 20);
@@ -106,18 +106,18 @@ void Sat1Display()
   
   Sat1Press = true;
   
-  fill(255, 255, 0);
+  fill(255, 200, 50);
   textSize(48);
   text(" Sun-Synchronous orbits ", width/4, height/6);
   if(dist(mouseX, mouseY, width/4, height/2) < 80)
   {
-    fill(200, 200, 100);
-    textSize(14);
+    fill(255, 200, 100);
+    textSize(20);
     text("Example: NOAA-14 (NOAA)", mouseX , mouseY - 35);
   }
   if(Sat1Lock == false)
   {
-    fill(255, 255, 100);
+    fill(255, 200, 80);
     textSize(16);
     text("Meteorological satellites are often placed in a", width/2 - 40, height/2.5);
     text("sun-synchronous or heliosynchronous orbit.", width/2 - 40, height/2.5 + 25);
