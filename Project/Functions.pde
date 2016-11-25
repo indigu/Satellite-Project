@@ -93,4 +93,19 @@ void Sat1Display()
   noStroke();
   shape(Sat1);
   popMatrix();
+  
+  boolean Sat1Display = true;
+  
+  fill(255, 255, 0);
+  text(" Sun-Synchronous orbits ", width/4, height/6);
+  if(dist(mouseX, mouseY, width/4, height/2) < 80)
+  {
+    fill(200, 200, 100);
+    text("Example: NOAA-14 (NOAA)", mouseX , mouseY - 35);
+    Sat1Display = false;
+  }
+  if(Sat1Display == true)
+  {
+   fill(255, 200, 0);
+  }
 }
