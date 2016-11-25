@@ -117,15 +117,17 @@ void Sat1Display()
   }
   if(Sat1Lock == false)
   {
+    float xpos = width/2 - 40;
+    float ypos = height/2.5;
     fill(255, 200, 80);
     textSize(16);
-    text("Meteorological satellites are often placed in a", width/2 - 40, height/2.5);
-    text("sun-synchronous or heliosynchronous orbit.", width/2 - 40, height/2.5 + 25);
-    text("The orbits are designed so that the satellite's orientation", width/2 - 40, height/2.5 + 50);
-    text("is fixed relative to the Sun throughout the year,", width/2 - 40, height/2.5 + 75);
-    text("allowing very accurate weather predictions to be made.", width/2 - 40, height/2.5 + 100);
-    text("Most meteorological satellites orbit ", width/2 - 40, height/2.5 + 125);
-    text("the Earth 15 to 16 times per day.", width/2 - 40, height/2.5 + 150);
+    text("Meteorological satellites are often placed in a", xpos, ypos);
+    text("sun-synchronous or heliosynchronous orbit.", xpos, ypos + 25);
+    text("The orbits are designed so that the satellite's orientation", xpos, ypos + 50);
+    text("is fixed relative to the Sun throughout the year,", xpos, ypos + 75);
+    text("allowing very accurate weather predictions to be made.", xpos, ypos + 100);
+    text("Most meteorological satellites orbit ", xpos, ypos + 125);
+    text("the Earth 15 to 16 times per day.", xpos, ypos + 150);
   }
 }
   

@@ -31,6 +31,7 @@ boolean Sat3Press = false;
 boolean Sat3Lock = true;
 int timer = 0;
 int i;
+char number;
 float displayAngle = random(TWO_PI);
 float displaySpeed = 0.01;
 //global variables
@@ -139,6 +140,11 @@ void draw()
     background(0);
     satInfoBackground();
     Sat1Display();
+          
+    if((keyCode == BACKSPACE) && (mode == true))
+    {
+      mode = false;
+    }
   }
 }
   
