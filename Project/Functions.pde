@@ -88,24 +88,30 @@ void Sat1Display()
 {
   pushMatrix();
   translate(width/4, height/2);
+  rotate(displayAngle);
+  displayRotation();
   lights();
   noFill();
   noStroke();
   shape(Sat1);
   popMatrix();
   
-  boolean Sat1Display = true;
-  
   fill(255, 255, 0);
+  textSize(48);
   text(" Sun-Synchronous orbits ", width/4, height/6);
   if(dist(mouseX, mouseY, width/4, height/2) < 80)
   {
     fill(200, 200, 100);
+    textSize(14);
     text("Example: NOAA-14 (NOAA)", mouseX , mouseY - 35);
-    Sat1Display = false;
+    fill(255, 255, 100);
+    textSize(16);
+    text("Meteorological satellites are often placed in a sun-synchronous or heliosynchronous orbit.", width/2, height/5);
   }
-  if(Sat1Display == true)
-  {
-   fill(255, 200, 0);
-  }
+
+}
+  
+void displayRotation()
+{
+  displayAngle = displayAngle + displaySpeed;
 }

@@ -25,11 +25,13 @@ boolean counter = false;
 boolean mode = false;
 int timer = 0;
 int i;
+float displayAngle = random(TWO_PI);
+float displaySpeed = 0.01;
 //global variables
 
 void setup()
 {
-  size(1000,600, P3D);
+  size(1000,600,P3D);
   //P3D allows processing to initialise 3D variables, in my case; Sphere
   background(244);
   noStroke();
@@ -57,7 +59,7 @@ void setup()
   satThree = new World(15, 180);
   //Initialising sats variables to the class world
   
-  Sat1 = createShape(SPHERE, 60);
+  Sat1 = createShape(SPHERE, 80);
   //recreating shapes for the information centre displays
   
   Sat1.setTexture(SatTexture1);
