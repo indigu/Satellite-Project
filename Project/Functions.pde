@@ -71,3 +71,26 @@ void mouseClicked()
   }
 }
 //resumes animation
+
+void satInfoBackground()
+{
+  stroke(0, 255, 100);
+  strokeWeight(6);
+  fill(0);
+  rect(20, 20, width - 40, height - 40, 20);
+  stroke(0, 250, 150);
+  strokeWeight(2);
+  fill(0);
+  rect(30, 30, width - 60, height - 60, 20);
+}
+
+void Sat1Display()
+{
+  pushMatrix();
+  translate(width/4, height/2);
+  lights();
+  noFill();
+  noStroke();
+  shape(Sat1);
+  popMatrix();
+}

@@ -18,6 +18,7 @@ PImage SatTexture3;
 PFont font;
 //Just loading Images and font that can be found within my program
 
+PShape Sat1;
 
 boolean lock = false;
 boolean counter = false;
@@ -56,6 +57,11 @@ void setup()
   satThree = new World(15, 180);
   //Initialising sats variables to the class world
   
+  Sat1 = createShape(SPHERE, 60);
+  //recreating shapes for the information centre displays
+  
+  Sat1.setTexture(SatTexture1);
+  
   for(i = 0; i < 500; i++)
   {
     stars[i] = new Star();
@@ -70,9 +76,10 @@ void draw()
   {
     rectBackground();
     timer++;
-    if(timer > 50)
+    if(timer > 50 )
     {
       word();
+      fill(255);
     }
   }
   //This is the start of the program, introduction screen
@@ -113,7 +120,7 @@ void draw()
       }
     //If user enters another key, the program will lock, and it will be
     //at a stand still
-      if((key == 'a') && (lock == true))
+      if((key == 'a') && (timer > 300))
       {
         mode = true;
       }
@@ -122,6 +129,8 @@ void draw()
   else
   {
     background(0);
+    satInfoBackground();
+    Sat1Display();
   }
 }
   
