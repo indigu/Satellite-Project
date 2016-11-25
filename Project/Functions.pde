@@ -69,6 +69,12 @@ void mouseClicked()
   {
     loop();
   }
+  
+  if((Sat1Press == true) && (Sat2Press == false) && (Sat3Press == false))
+  {
+    if(dist(mouseX, mouseY, width/4, height/2) < 80);
+    Sat1Lock = false;
+  }
 }
 //resumes animation
 
@@ -96,6 +102,8 @@ void Sat1Display()
   shape(Sat1);
   popMatrix();
   
+  Sat1Press = true;
+  
   fill(255, 255, 0);
   textSize(48);
   text(" Sun-Synchronous orbits ", width/4, height/6);
@@ -104,11 +112,17 @@ void Sat1Display()
     fill(200, 200, 100);
     textSize(14);
     text("Example: NOAA-14 (NOAA)", mouseX , mouseY - 35);
+  }
+  if(Sat1Lock == false)
+  {
     fill(255, 255, 100);
     textSize(16);
-    text("Meteorological satellites are often placed in a sun-synchronous or heliosynchronous orbit.", width/2, height/5);
+    text("Meteorological satellites are often placed in a", width/2 - 40, height/3);
+    text("sun-synchronous or heliosynchronous orbit.", width/2 - 40, height/3 + 25);
+    text("The orbits are designed so that the satellite's orientation", width/2 - 40, height/3 + 50);
+    text("is fixed relative to the Sun throughout the year,", width/2 - 40, height/3 + 75);
+    text("allowing very accurate weather predictions to be made.", width/2 - 40, height/3 + 100);
   }
-
 }
   
 void displayRotation()
