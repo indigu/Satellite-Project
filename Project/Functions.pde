@@ -56,7 +56,7 @@ void word()
     fill(255, 255, 0);
      
     text("Satellites Information Center", width/6 + 10, height/6);
-    text("Press spacebar to begin", width/4.5, height/1.1);
+    text("Instructions are for the weak", width/6 + 5, height/1.1);
     smooth();
 }
 //Intro words
