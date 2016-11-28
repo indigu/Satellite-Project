@@ -19,6 +19,7 @@ PFont font;
 //Just loading Images and font that can be found within my program
 
 PShape Sat1;
+PShape Sat2;
 
 boolean lock = false;
 boolean counter = false;
@@ -28,6 +29,7 @@ boolean Sat1Lock = true;
 boolean Sat1Toggle = false;
 boolean Sat2Press = false;
 boolean Sat2Lock = true;
+boolean Sat2Toggle = false;
 boolean Sat3Press = false;
 boolean Sat3Lock = true;
 boolean menuToggle = false;
@@ -70,9 +72,11 @@ void setup()
   //Initialising sats variables to the class world
   
   Sat1 = createShape(SPHERE, 80);
+  Sat2 = createShape(SPHERE, 80);
   //recreating shapes for the information centre displays
   
   Sat1.setTexture(SatTexture1);
+  Sat2.setTexture(SatTexture2);
   
   for(i = 0; i < 500; i++)
   {
@@ -144,17 +148,22 @@ void draw()
   {
     if(menuToggle == true)
     {
-      if(key == 'A') 
-      {
-        Sat1Toggle = true;
-      }
+      starBackground();
     }
     if(Sat1Toggle == true)
     {
       background(0);
-      satInfoBackground();
+      sat1InfoBackground();
       Sat1Display();
     }
+    if(Sat2Toggle == true)
+    {
+      background(0);
+      sat2InfoBackground();
+      Sat2Display();
+    }
+      
+    
           
     if((keyCode == BACKSPACE) && (mode == true))
     {

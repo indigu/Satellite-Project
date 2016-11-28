@@ -7,6 +7,26 @@ void starBackground()
   
   fill(200, 90);
   ellipse(random(width), random(height), ellipseSize, ellipseSize);
+  
+  pushMatrix();
+  translate(width/4, height/3);
+  rotate(displayAngle);
+  displayRotation();
+  lights();
+  noFill();
+  noStroke();
+  shape(Sat1);
+  popMatrix();
+  
+  pushMatrix();
+  translate(width/2 + 40, height/3);
+  rotate(displayAngle);
+  displayRotation();
+  lights();
+  noFill();
+  noStroke();
+  shape(Sat2);
+  popMatrix();
 }
 
 
@@ -77,10 +97,37 @@ void mouseClicked()
       Sat1Lock = false;
     }
   }
+  if(menuToggle == true)
+  {
+    if(dist(mouseX, mouseY, width/4, height/3) < 80)
+    {
+      Sat1Toggle = true;
+    }
+  }
+  
+  if(menuToggle == true)
+  {
+    if(dist(mouseX, mouseY, width/2 + 40, height/3) < 80)
+    {
+      Sat2Toggle = true;
+    }
+  }
 }
 //resumes animation
 
-void satInfoBackground()
+void sat1InfoBackground()
+{
+  stroke(255, 99, 71);
+  strokeWeight(6);
+  fill(0);
+  rect(20, 20, width - 40, height - 40, 20);
+  stroke(200, 120, 100);
+  strokeWeight(2);
+  fill(0);
+  rect(30, 30, width - 60, height - 60, 20);
+}
+
+void sat2InfoBackground()
 {
   stroke(255, 99, 71);
   strokeWeight(6);
@@ -105,6 +152,8 @@ void Sat1Display()
   popMatrix();
   
   Sat1Press = true;
+  Sat2Press = false;
+  Sat3Press = false;
   
   fill(255, 200, 50);
   textSize(48);
@@ -130,7 +179,24 @@ void Sat1Display()
     text("the Earth 15 to 16 times per day.", xpos, ypos + 150);
   }
 }
+
+void Sat2Display()
+{
+  pushMatrix();
+  translate(width/4, height/2);
+  rotate(displayAngle);
+  displayRotation();
+  lights();
+  noFill();
+  noStroke();
+  shape(Sat2);
+  popMatrix();
   
+  Sat1Press = false;
+  Sat2Press = true;
+  Sat3Press = false;
+}
+ 
 void displayRotation()
 {
   displayAngle = displayAngle + displaySpeed;
