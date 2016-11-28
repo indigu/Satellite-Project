@@ -1,4 +1,4 @@
-/* Much less fancy way of drawing the background
+
 void starBackground()
 {
   float ellipseSize = random(0,10);
@@ -8,7 +8,7 @@ void starBackground()
   fill(200, 90);
   ellipse(random(width), random(height), ellipseSize, ellipseSize);
 }
-*/
+
 
 void rectBackground()
 {

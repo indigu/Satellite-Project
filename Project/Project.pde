@@ -25,13 +25,16 @@ boolean counter = false;
 boolean mode = false;
 boolean Sat1Press = false;
 boolean Sat1Lock = true;
+boolean Sat1Toggle = false;
 boolean Sat2Press = false;
 boolean Sat2Lock = true;
 boolean Sat3Press = false;
 boolean Sat3Lock = true;
+boolean menuToggle = false;
+
 int timer = 0;
 int i;
-char number;
+char menu;
 float displayAngle = random(TWO_PI);
 float displaySpeed = 0.01;
 //global variables
@@ -132,14 +135,26 @@ void draw()
       if((keyCode == ENTER) && (timer > 300))
       {
         mode = true;
+        menuToggle = true;
+        Sat1Lock = true;
       }
     }
   }
   else
   {
-    background(0);
-    satInfoBackground();
-    Sat1Display();
+    if(menuToggle == true)
+    {
+      if(key == 'A') 
+      {
+        Sat1Toggle = true;
+      }
+    }
+    if(Sat1Toggle == true)
+    {
+      background(0);
+      satInfoBackground();
+      Sat1Display();
+    }
           
     if((keyCode == BACKSPACE) && (mode == true))
     {
