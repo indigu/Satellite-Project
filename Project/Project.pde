@@ -169,7 +169,7 @@ void draw()
     {
       background(0);
       sat3InfoBackground();
-      //Sat3Display();
+      Sat3Display();
     }
           
     if((keyCode == BACKSPACE) && (mode == true))

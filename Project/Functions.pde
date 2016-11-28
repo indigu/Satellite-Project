@@ -257,12 +257,49 @@ void Sat2Display()
     text("Earth-synchronous or geosynchronous satellites, ", xpos, ypos);
     text("are placed into orbit so that their period of rotation.", xpos, ypos + 25);
     text("exactly matches the Earth's rotation.", xpos, ypos + 50);
-    text("They take 24 hours to make one rotation.,", xpos, ypos + 75);
+    text("They take 24 hours to make one rotation.", xpos, ypos + 75);
     text("However, the plane of orbit for these satellites", xpos, ypos + 100);
     text("is generally not the equatorial plane.", xpos, ypos + 125);
     text("The concept was first proposed by Herman Potočnik in 1928.", xpos, ypos + 150);
 }
  
+void Sat3Display()
+{
+  pushMatrix();
+  translate(width/4, height/2);
+  rotate(displayAngle);
+  displayRotation();
+  lights();
+  noFill();
+  noStroke();
+  shape(Sat3);
+  popMatrix();
+  
+  Sat1Press = false;
+  Sat2Press = false;
+  Sat3Press = true;
+  
+  fill(#19DE00);
+  textSize(48);
+  text(" Geostationary satellites ", width/4, height/6);
+  if(dist(mouseX, mouseY, width/4, height/2) < 80)
+  {
+    fill(#29B916);
+    textSize(20);
+    text("Example: INTELSAL 33E", mouseX , mouseY - 35);
+  }
+  float xpos = width/2 - 40;
+    float ypos = height/2.5;
+    fill(#29B916);
+    textSize(16);
+    text("The majority of communications satellites, ", xpos, ypos);
+    text("are in fact geostationary satellites.", xpos, ypos + 25);
+    text("Geostationary satellites like geosynchronous satellites,", xpos, ypos + 50);
+    text("take 24 hours to complete a rotation.", xpos, ypos + 75);
+    text("However, geostationary satellites are positioned directly,", xpos, ypos + 100);
+    text("over the equator and their path,", xpos, ypos + 125);
+    text("follows the equatorial plane of the Earth.", xpos, ypos + 150);
+}
 void displayRotation()
 {
   displayAngle = displayAngle + displaySpeed;
