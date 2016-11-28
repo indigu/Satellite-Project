@@ -250,7 +250,9 @@ void Sat2Display()
     textSize(20);
     text("Example: ECHOSTAR", mouseX , mouseY - 35);
   }
-  float xpos = width/2 - 40;
+  if(Sat2Lock == false)
+  {
+    float xpos = width/2 - 40;
     float ypos = height/2.5;
     fill(#5834FF);
     textSize(16);
@@ -261,6 +263,7 @@ void Sat2Display()
     text("However, the plane of orbit for these satellites", xpos, ypos + 100);
     text("is generally not the equatorial plane.", xpos, ypos + 125);
     text("The concept was first proposed by Herman Potočnik in 1928.", xpos, ypos + 150);
+  }
 }
  
 void Sat3Display()
@@ -288,7 +291,9 @@ void Sat3Display()
     textSize(20);
     text("Example: INTELSAL 33E", mouseX , mouseY - 35);
   }
-  float xpos = width/2 - 40;
+  if(Sat3Lock == false)
+  {
+    float xpos = width/2 - 40;
     float ypos = height/2.5;
     fill(#29B916);
     textSize(16);
@@ -299,6 +304,7 @@ void Sat3Display()
     text("However, geostationary satellites are positioned directly,", xpos, ypos + 100);
     text("over the equator and their path,", xpos, ypos + 125);
     text("follows the equatorial plane of the Earth.", xpos, ypos + 150);
+  }
 }
 void displayRotation()
 {

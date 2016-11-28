@@ -158,18 +158,24 @@ void draw()
       background(0);
       sat1InfoBackground();
       Sat1Display();
+      Sat2Toggle = false;
+      Sat3Toggle = false;
     }
-    if(Sat2Toggle == true)
+    if((Sat2Toggle == true) || ((Sat1Toggle == true) && (keyCode == RIGHT))) 
     {
       background(0);
       sat2InfoBackground();
       Sat2Display();
+      Sat1Toggle = false;
+      Sat3Toggle = false;
     }
     if(Sat3Toggle == true)
     {
       background(0);
       sat3InfoBackground();
       Sat3Display();
+      Sat1Toggle = false;
+      Sat2Toggle = false;
     }
           
     if((keyCode == BACKSPACE) && (mode == true))
