@@ -9,7 +9,7 @@ void starBackground()
   ellipse(random(width), random(height), ellipseSize, ellipseSize);
   
   pushMatrix();
-  translate(width/4, height/3);
+  translate(width/4 + 90, height/3);
   rotate(displayAngle);
   displayRotation();
   lights();
@@ -19,13 +19,23 @@ void starBackground()
   popMatrix();
   
   pushMatrix();
-  translate(width/2 + 40, height/3);
+  translate(width/2, height - height/3 + 80);
   rotate(displayAngle);
   displayRotation();
   lights();
   noFill();
   noStroke();
   shape(Sat2);
+  popMatrix();
+  
+  pushMatrix();
+  translate(width - width/4 - 90, height/3);
+  rotate(displayAngle);
+  displayRotation();
+  lights();
+  noFill();
+  noStroke();
+  shape(Sat3);
   popMatrix();
 }
 
@@ -76,7 +86,7 @@ void runWorlds()
     {
       satTwo.satTwo();
     }
-    if(timer > 250);
+    if(timer > 250)
     {
       satThree.satThree();
     }  
@@ -99,17 +109,41 @@ void mouseClicked()
   }
   if(menuToggle == true)
   {
-    if(dist(mouseX, mouseY, width/4, height/3) < 80)
+    if(dist(mouseX, mouseY, width/4 + 90, height/3) < 80)
     {
       Sat1Toggle = true;
     }
   }
   
+  
+  if((Sat1Press == false) && (Sat2Press == true) && (Sat3Press == false))
+  {
+    if(dist(mouseX, mouseY, width/4, height/2) < 80)
+    {
+      Sat2Lock = false;
+    }
+  }
   if(menuToggle == true)
   {
-    if(dist(mouseX, mouseY, width/2 + 40, height/3) < 80)
+    if(dist(mouseX, mouseY, width/2, height - height/3 + 80) < 80)
     {
       Sat2Toggle = true;
+    }
+  }
+  
+  
+  if((Sat1Press == false) && (Sat2Press == false) && (Sat3Press == true))
+  {
+    if(dist(mouseX, mouseY, width/4, height/2) < 80)
+    {
+      Sat3Lock = false;
+    }
+  }
+  if(menuToggle == true)
+  {
+    if(dist(mouseX, mouseY, width - width/4 - 90, height/3) < 80)
+    {
+      Sat3Toggle = true;
     }
   }
 }
@@ -126,18 +160,29 @@ void sat1InfoBackground()
   fill(0);
   rect(30, 30, width - 60, height - 60, 20);
 }
-
 void sat2InfoBackground()
 {
-  stroke(255, 99, 71);
+  stroke(#2000B4);
   strokeWeight(6);
   fill(0);
   rect(20, 20, width - 40, height - 40, 20);
-  stroke(200, 120, 100);
+  stroke(#4A30BF);
   strokeWeight(2);
   fill(0);
   rect(30, 30, width - 60, height - 60, 20);
 }
+void sat3InfoBackground()
+{
+  stroke(#108301);
+  strokeWeight(6);
+  fill(0);
+  rect(20, 20, width - 40, height - 40, 20);
+  stroke(#14AF00);
+  strokeWeight(2);
+  fill(0);
+  rect(30, 30, width - 60, height - 60, 20);
+}
+
 
 void Sat1Display()
 {
@@ -195,6 +240,27 @@ void Sat2Display()
   Sat1Press = false;
   Sat2Press = true;
   Sat3Press = false;
+  
+  fill(#5834FF);
+  textSize(48);
+  text(" Geosynchronous satellites ", width/4 - 30, height/6);
+  if(dist(mouseX, mouseY, width/4, height/2) < 80)
+  {
+    fill(#5834FF);
+    textSize(20);
+    text("Example: ECHOSTAR", mouseX , mouseY - 35);
+  }
+  float xpos = width/2 - 40;
+    float ypos = height/2.5;
+    fill(#5834FF);
+    textSize(16);
+    text("Earth-synchronous or geosynchronous satellites, ", xpos, ypos);
+    text("are placed into orbit so that their period of rotation.", xpos, ypos + 25);
+    text("exactly matches the Earth's rotation.", xpos, ypos + 50);
+    text("They take 24 hours to make one rotation.,", xpos, ypos + 75);
+    text("However, the plane of orbit for these satellites", xpos, ypos + 100);
+    text("is generally not the equatorial plane.", xpos, ypos + 125);
+    text("The concept was first proposed by Herman Potočnik in 1928.", xpos, ypos + 150);
 }
  
 void displayRotation()

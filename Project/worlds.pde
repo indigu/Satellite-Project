@@ -99,7 +99,7 @@ class World
   void satThree()
   {
     pushMatrix();
-    PVector v4 = new PVector(3, 0, 1);
+    PVector v4 = new PVector(1, 2, 1);
     PVector perp = vec.cross(v4);
     rotate(angle, perp.x, perp.y, perp.z);
     rotate(satAngle);

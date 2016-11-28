@@ -20,6 +20,7 @@ PFont font;
 
 PShape Sat1;
 PShape Sat2;
+PShape Sat3;
 
 boolean lock = false;
 boolean counter = false;
@@ -32,6 +33,7 @@ boolean Sat2Lock = true;
 boolean Sat2Toggle = false;
 boolean Sat3Press = false;
 boolean Sat3Lock = true;
+boolean Sat3Toggle = false;
 boolean menuToggle = false;
 
 int timer = 0;
@@ -73,11 +75,12 @@ void setup()
   
   Sat1 = createShape(SPHERE, 80);
   Sat2 = createShape(SPHERE, 80);
+  Sat3 = createShape(SPHERE, 80);
   //recreating shapes for the information centre displays
   
   Sat1.setTexture(SatTexture1);
   Sat2.setTexture(SatTexture2);
-  
+  Sat3.setTexture(SatTexture3);
   for(i = 0; i < 500; i++)
   {
     stars[i] = new Star();
@@ -162,12 +165,19 @@ void draw()
       sat2InfoBackground();
       Sat2Display();
     }
-      
-    
+    if(Sat3Toggle == true)
+    {
+      background(0);
+      sat3InfoBackground();
+      //Sat3Display();
+    }
           
     if((keyCode == BACKSPACE) && (mode == true))
     {
       mode = false;
+      Sat1Toggle = false;
+      Sat2Toggle = false;
+      Sat3Toggle = false; 
     }
   }
 }
