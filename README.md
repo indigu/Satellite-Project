@@ -9,3 +9,5 @@ I also liked how I dealth with my functionalities, as it proved to be quite smoo
 
 I used royalty free sounds, and took information from the wiki pages of satellites and http://www.telescope.org/nuffield/pas/moon/moon9e.html.
  
+My youtube video: 
+https://www.youtube.com/watch?v=hfiitlKV3e8&feature=youtu.be
