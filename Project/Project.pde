@@ -1,3 +1,6 @@
+import processing.sound.*;
+SoundFile sound;
+
 World[] Planets = new World[3];
 //This class array is for Earth and Moon
 Star[] stars = new Star[500];
@@ -17,6 +20,8 @@ PImage SatTexture2;
 PImage SatTexture3;
 PFont font;
 //Just loading Images and font that can be found within my program
+
+
 
 PShape Sat1;
 PShape Sat2;
@@ -86,6 +91,9 @@ void setup()
     stars[i] = new Star();
   }
   //Initialising star array to the class Stars
+  
+  sound = new SoundFile(this, "bensound-scifi.mp3");
+  sound.play();
 }
 
 void draw()
