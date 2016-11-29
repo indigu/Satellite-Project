@@ -37,6 +37,27 @@ void starBackground()
   noStroke();
   shape(Sat3);
   popMatrix();
+  
+  if(dist(mouseX, mouseY, width/4 + 90, height/3) < 80)
+  {
+    fill(255, 200, 100);
+    textSize(20);
+    text("Sun-Synchronous orbits", mouseX , mouseY - 35);
+  }
+  
+  if(dist(mouseX, mouseY, width/2, height - height/3 + 80) < 80)
+  {
+    fill(0, 0, 255);
+    textSize(20);
+    text("Geosynchronous satellites", mouseX , mouseY - 35);
+  }
+  
+  if(dist(mouseX, mouseY, width - width/4 - 90, height/3) < 80)
+  {
+    fill(#29B916);
+    textSize(20);
+    text("Geostationary satellites", mouseX , mouseY - 35);
+  }
 }
 
 
