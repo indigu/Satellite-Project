@@ -22,5 +22,5 @@ class Star
     noStroke();
     ellipse(x, y, 3, 3);
   }
-  
 }
+//Just a class for a background

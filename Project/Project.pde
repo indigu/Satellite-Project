@@ -1,5 +1,6 @@
 import processing.sound.*;
 SoundFile sound;
+//Getting the sound file library and initialising a soundfile variable
 
 World[] Planets = new World[3];
 //This class array is for Earth and Moon
@@ -21,11 +22,10 @@ PImage SatTexture3;
 PFont font;
 //Just loading Images and font that can be found within my program
 
-
-
 PShape Sat1;
 PShape Sat2;
 PShape Sat3;
+//Initialising PShapes 
 
 boolean lock = false;
 boolean counter = false;
@@ -156,6 +156,7 @@ void draw()
         Sat3Lock = true;
         timer = 0;
       }
+      //Set of conditions that allows user to go into sat display
     }
   }
   else
@@ -163,6 +164,7 @@ void draw()
     if(menuToggle == true)
     {
       starBackground();
+      //Menu for satellite displays
     }
     if(Sat1Toggle == true)
     {
@@ -182,7 +184,9 @@ void draw()
       sat3InfoBackground();
       Sat3Display();
     }
-          
+    //If one of the satellites is clicked, it's respective toggle becomes true
+    //and runs it's display
+    
     if((keyCode == BACKSPACE) && (mode == true))
     {
       mode = false;
@@ -190,6 +194,8 @@ void draw()
       Sat2Toggle = false;
       Sat3Toggle = false; 
     }
+    //If both conditions are true, it goes back to main menu
+    //and resets sat display animations
   }
 }
   

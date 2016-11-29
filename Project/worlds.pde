@@ -5,6 +5,7 @@ class World
   float angle;
   float satAngle;
   float speed;
+  //variables I need for a world
   
   PVector vec;
   PShape earth;
@@ -12,6 +13,7 @@ class World
   PShape sat1;
   PShape sat2;
   PShape sat3;
+  //PShapes used
 
   World(float rad, float dis)
   {
@@ -21,8 +23,12 @@ class World
     satAngle = random(TWO_PI);
     speed = 0.01;
     vec = PVector.random3D();
+    //calling PVector to have a random point 
     vec.mult(distance);
+    //Instead of vec moving it a distance of 1, I multiply it by distance away from
+    //center
     
+    //Creating the Shapes used   
     noStroke();
     noFill();
     earth = createShape(SPHERE, radius/2);
@@ -57,6 +63,7 @@ class World
     shape(earth);
     popMatrix();
   }
+  //this is for the earth
   
   void moon()
   { 
@@ -108,9 +115,12 @@ class World
     shape(sat3);
     popMatrix();
   } 
+  //All sats are identical, with different angles of vector
+  
   
   void rotation()
   {
     angle = angle + speed;
   }
 }
+//makes worlds rotate

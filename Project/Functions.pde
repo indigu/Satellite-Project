@@ -7,6 +7,8 @@ void starBackground()
   
   fill(200, 90);
   ellipse(random(width), random(height), ellipseSize, ellipseSize);
+  //Background for the sat display menu
+  
   
   pushMatrix();
   translate(width/4 + 90, height/3);
@@ -38,6 +40,9 @@ void starBackground()
   shape(Sat3);
   popMatrix();
   
+  //all these just creates the satellite and translates them
+  
+  
   if(dist(mouseX, mouseY, width/4 + 90, height/3) < 80)
   {
     fill(255, 200, 100);
@@ -58,6 +63,8 @@ void starBackground()
     textSize(20);
     text("Geostationary satellites", mouseX , mouseY - 35);
   }
+  
+  //a click option that enables user to go into a satellite's information center
 }
 
 
@@ -74,7 +81,6 @@ void rectBackground()
   {
     text("Okay, just press SPACEBAR to continue", 50, height/2);
   }
-  
 }
 //Fancy background for the intro
 
@@ -137,6 +143,7 @@ void mouseClicked()
   {
     loop();
   }
+  //This is resuming the animation when paused
   
   if((Sat1Press == true) && (Sat2Press == false) && (Sat3Press == false))
   {
@@ -184,6 +191,10 @@ void mouseClicked()
       Sat3Toggle = true;
     }
   }
+  //all these clicks are for resuming the display center
+  //the first if statements are when you're in the display center
+  //if you click it, it'll display animations
+  //the second set of if statements is when you're in the menu of the display center
 }
 //resumes animation
 
@@ -344,7 +355,11 @@ void Sat3Display()
     text("follows the equatorial plane of the Earth.", xpos, ypos + 150);
   }
 }
+//all of these display pages are identical, just different texts, shapes, and colors
+
+
 void displayRotation()
 {
   displayAngle = displayAngle + displaySpeed;
 }
+//makes planet rotate
