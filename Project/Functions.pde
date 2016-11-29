@@ -48,6 +48,12 @@ void rectBackground()
   
   fill(random(0,255), random(0,255), random(0,255));
   rect(random(width), random(height), rectSize, rectSize);
+  
+  if(timer > 400)
+  {
+    text("Okay, just press SPACEBAR to continue", 50, height/2);
+  }
+  
 }
 //Fancy background for the intro
 
@@ -90,6 +96,17 @@ void runWorlds()
     {
       satThree.satThree();
     }  
+    
+    if(timer > 500)
+    {
+      textSize(16);
+      fill(255);
+      text("Instructions:", -480, -265);
+      text("Spacebar to pause", -480, -240);
+      text("Click anywhere to continue animation", -480, -215);
+      text("Press Enter as the animation is running", -480, -190);
+      text("Backspace to go back to this", -480, -165);
+    }
 }
 //Function that shows objects at different times due to timer variable
      

@@ -154,6 +154,7 @@ void draw()
         Sat1Lock = true;
         Sat2Lock = true;
         Sat3Lock = true;
+        timer = 0;
       }
     }
   }
